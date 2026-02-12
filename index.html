@@ -253,7 +253,7 @@
       <div class="column is-full-width">
         <h2 class="title is-3" style="margin-top: -20px">Method</h2>
 
-        <img src="./videos/pipeline.png" class="center">
+        <img src=".static/videos/pipeline.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
             The framework of DyEG-SLAM. Given a sequence of RGB images, DyEG-SLAM jointly estimates scene depth and camera motion using multi-view attention-based depth and camera heads. Based on the inferred camera poses and depth estimates, a dedicated motion head extracts motion cues and further leverages open-vocabulary semantic information to propagate these cues into semantically refined motion masks. Incoming frames are incrementally grouped into local submaps for inference and maintained in a submap buffer, where overlap-based transformation estimation and loop closure are applied to enforce global consistency. Finally, a dynamic-aware GS-DPT module takes RGB images and semantic motion masks as input to infer Gaussian primitives with dynamic regions suppressed, which are subsequently rendered using Gaussian rasterization.
