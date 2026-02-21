@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="DyEG-SLAM: End-to-End Gaussian SLAM in Dynamic Scenes">
-  <meta name="keywords" content="DyEG-SLAM: End-to-End Gaussian SLAM in Dynamic Scenes">
+        content="DyEG-SLAM: Feed-forward Gaussian SLAM in Dynamic Scenes">
+  <meta name="keywords" content="DyEG-SLAM: Feed-forward Gaussian SLAM in Dynamic Scenes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DyEG-SLAM</title>
 
@@ -212,35 +212,22 @@
 <!--  </div>-->
 <!--</section>-->
 
-<!--<section class="section">-->
-<!--  <div class="container is-max-desktop">-->
-<!--    &lt;!&ndash; Abstract. &ndash;&gt;-->
-<!--    <div class="columns is-centered has-text-centered">-->
-<!--      <div class="column is-four-fifths">-->
-<!--        <h2 class="title is-3" style="margin-top: -60px">Abstract</h2>-->
-<!--        <div class="content has-text-justified">-->
-<!--          <p>-->
-<!--            We present WildGS-SLAM, a robust and efficient monocular RGB SLAM system designed to handle dynamic environments by leveraging uncertainty-aware geometric mapping. Unlike traditional SLAM systems, which assume static scenes, our approach integrates depth and uncertainty information to enhance tracking, mapping, and rendering performance in the presence of moving objects. We introduce an uncertainty map, predicted by a shallow multi-layer perceptron and DINOv2 features, to guide dynamic object removal during both tracking and mapping. This uncertainty map enhances dense bundle adjustment and Gaussian map optimization, improving reconstruction accuracy. Our system is evaluated on multiple datasets and demonstrates artifact-free view synthesis. Results showcase WildGS-SLAM's superior performance in dynamic environments compared to state-of-the-art methods.-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash;/ Abstract. &ndash;&gt;-->
-<!--    &lt;!&ndash; Paper video. &ndash;&gt;-->
-<!--    -->
-<!--    <div class="columns is-centered has-text-centered">-->
-<!--      <div class="column is-four-fifths">-->
-<!--        <h2 class="title is-3">Video</h2>-->
-<!--        <div class="publication-video">-->
-<!--          <iframe src="https://www.youtube.com/embed/xXuolzFvddQ?rel=0&amp;showinfo=0"-->
-<!--                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--   -->
-<!--    &lt;!&ndash;/ Paper video. &ndash;&gt;-->
-<!--  </div>-->
-<!--</section>-->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top: -60px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Feed-forward 3D reconstruction models have recently shown strong potential for end-to-end SLAM by enabling efficient inference without iterative optimization. In this paper, we propose an end-to-end dynamic Gaussian SLAM framework. To handle scene dynamics in a feed-forward manner, we first extend the Depth Anything V3 pipeline with motion cues via an auxiliary feed-forward motion head that operates in conjunction with the camera and depth heads, enabling dynamic segmentation without manual priors. To achieve scalable feed-forward tracking in dynamic environments, we decompose the scene into multiple submaps and introduce an overlap-based submap alignment strategy to achieve stable alignment of submaps in dynamic environments. Moreover, motion cues are leveraged to enable loop closure in dynamic scenes, enhancing global consistency under dynamic conditions. Finally, the predicted motion cues are integrated into a dynamic-aware GS-DPT module, which explicitly disentangles static and dynamic Gaussian primitives for robust scene representation. Extensive experiments demonstrate that our method achieves strong performance in both dynamic and static scenes, even without camera intrinsic calibration.  </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
 
 
 
