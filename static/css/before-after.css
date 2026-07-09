@@ -1,0 +1,111 @@
+/* ============================================================
+   Before/After Image Comparison Slider Styles
+   Used with BeforeAfter class in static/js/script.js
+   Originally from: https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
+   ============================================================ */
+
+.bal-container-small {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: col-resize;
+    user-select: none;
+}
+
+.bal-container-small img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;  /* prevent image dragging */
+}
+
+/* The "after" image: sits behind, shows the full image */
+.bal-after {
+    position: relative;
+    z-index: 1;
+}
+
+/* The "before" image: overlays on top, clipped to show only left portion */
+.bal-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;              /* initial split; overridden by JS */
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/*
+ * The inset container has its width set by JS to match the outer container.
+ * This makes the image inside it align with the .bal-after image below,
+ * while .bal-before's overflow:hidden only shows the left half.
+ */
+.bal-before-inset {
+    width: 100%;
+}
+
+.bal-before .bal-before-inset img {
+    max-width: none;          /* allow JS to set exact width */
+    width: 100%;
+}
+
+/* Label boxes */
+.bal-afterPosition,
+.bal-beforePosition {
+    position: absolute;
+    bottom: 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    border-radius: 4px;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.afterLabel {
+    right: 12px;
+}
+
+.beforeLabel {
+    left: 12px;
+}
+
+/* The vertical drag handle / divider line */
+.bal-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;                /* initial position; overridden by JS */
+    height: 100%;
+    width: 4px;
+    background-color: #fff;
+    z-index: 3;
+    transform: translateX(-50%);
+    cursor: col-resize;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Left/right arrow indicators on the handle */
+.handle-left-arrow,
+.handle-right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.handle-left-arrow {
+    left: -16px;
+    border-right: 8px solid #fff;
+}
+
+.handle-right-arrow {
+    right: -16px;
+    border-left: 8px solid #fff;
+}
