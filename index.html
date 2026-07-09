@@ -234,31 +234,37 @@ Dynamic Visual SLAM with 3D Foundation Model">
 
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-max-desktop">      <!-- ① -->
 
     <!-- Results. -->
-    <div class="columns is-centered ">
-      <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
+    <div class="columns is-centered">         <!-- ② -->
+      <div class="column is-full-width">      <!-- ③ -->
 
-        <h3 class="title is-4">Real-Time video</h3>
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">
+          Results
+        </h2>
 
-        <div class="columns is-centered">
-          <div class="column">
-            <div class="video-container has-text-centered">
+        <h3 class="title is-4">Real-Time Video</h3>
+
+        <div class="columns is-centered">     <!-- ④ -->
+          <div class="column">                <!-- ⑤ -->
+
+            <div class="video-container has-text-centered"> <!-- ⑥ -->
               <video id="realtime" controls preload="auto" height="100%">
                 <source src="static/videos/realtime.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <p class="caption">Ours</p>
-              <!-- <p class="caption">First video caption</p> -->
-            </div>
-          </div>
+            </div> <!-- ⑥ -->
 
-          </div>
-        </div>
+          </div> <!-- ⑤ -->
+        </div> <!-- ④ -->
 
+      </div> <!-- ③ -->
+    </div> <!-- ② -->
 
+  </div> <!-- ① -->
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
