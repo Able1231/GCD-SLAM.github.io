@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="DyEG-SLAM: Feed-forward Gaussian SLAM in Dynamic Scenes">
-  <meta name="keywords" content="DyEG-SLAM: Feed-forward Gaussian SLAM in Dynamic Scenes">
+        content="GCD-SLAM: Globally Consistent Calibration-Free
+Dynamic Visual SLAM with 3D Foundation Model">
+  <meta name="keywords" content="GCD-SLAM: Globally Consistent Calibration-Free
+Dynamic Visual SLAM with 3D Foundation Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DyEG-SLAM</title>
 
@@ -132,9 +134,9 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
 
-          <h1 class="title is-1 publication-title">DyEG-SLAM</h1>
+          <h1 class="title is-1 publication-title">GCD-SLAM</h1>
           <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">
-            End-to-End Gaussian SLAM in Dynamic Scenes
+            Globally Consistent Calibration-Free Dynamic Visual SLAM with 3D Foundation Model
           </h2>
 
 <!--          <div class="column is-full_width">-->
@@ -231,6 +233,32 @@
 
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
+
+        <h3 class="title is-4">Real-Time video</h3>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="video-container has-text-centered">
+              <video id="realtime" controls preload="auto" height="100%">
+                <source src="static/videos/realtime.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <p class="caption">Ours</p>
+              <!-- <p class="caption">First video caption</p> -->
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -243,7 +271,12 @@
         <img src="static/videos/pipeline.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            The framework of DyEG-SLAM. Given a sequence of RGB images, DyEG-SLAM jointly estimates scene depth and camera motion using multi-view attention-based depth and camera heads. Based on the inferred camera poses and depth estimates, a dedicated motion head extracts motion cues and further leverages open-vocabulary semantic information to propagate these cues into semantically refined motion masks. Incoming frames are incrementally grouped into local submaps for inference and maintained in a submap buffer, where overlap-based transformation estimation and loop closure are applied to enforce global consistency. Finally, a dynamic-aware GS-DPT module takes RGB images and semantic motion masks as input to infer Gaussian primitives with dynamic regions suppressed, which are subsequently rendered using Gaussian rasterization.
+             Framework of GCD-SLAM. GCD-SLAM extends Depth Anything V3 with motion cues to jointly infer camera
+poses, scene depth, and motion masks from a sequence of RGB images. Incoming frames are incrementally grouped into local
+submaps for independent inference and maintained in a submap buffer, where overlap-based transformation estimation and
+loop closure are performed to enforce global consistency. Finally, an efficient Gaussian mapping module takes RGB images
+and motion masks to generate Gaussian primitives with dynamic regions suppressed, which are then rendered via Gaussian
+rasterization.
           </p>
         </div>
 
@@ -426,37 +459,37 @@
             </div>
 
 
-        <div style="height: 50px;"></div> 
-        <h3 class="title is-4">Bonn RGB-D Dynamic Dataset</h3>
+<!--        <div style="height: 50px;"></div> -->
+<!--        <h3 class="title is-4">Bonn RGB-D Dynamic Dataset</h3>-->
 
-        <!-- <br> -->
-        <h3 class="title is-5">movebox</h3>
-        <p style="margin-top: -60px">
-          <div class="container is-max-desktop">
-            <div class="hero-body">
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-full-width">
-                  <video class="video" width="50%" id="move" loop playsinline autoplay muted src="static/videos/bonn_movebox.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-                  <canvas height=0 class="videoMerge" id="moveMerge"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-        </p>
+<!--        &lt;!&ndash; <br> &ndash;&gt;-->
+<!--        <h3 class="title is-5">movebox</h3>-->
+<!--        <p style="margin-top: -60px">-->
+<!--          <div class="container is-max-desktop">-->
+<!--            <div class="hero-body">-->
+<!--              <div class="columns is-centered has-text-centered">-->
+<!--                <div class="column is-full-width">-->
+<!--                  <video class="video" width="50%" id="move" loop playsinline autoplay muted src="static/videos/bonn_movebox.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>-->
+<!--                  <canvas height=0 class="videoMerge" id="moveMerge"></canvas>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </p>-->
 
-        <h3 class="title is-5">person</h3>
-        <p style="margin-top: -60px">
-          <div class="container is-max-desktop">
-            <div class="hero-body">
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-full-width">
-                  <video class="video" width="50%" id="person1" loop playsinline autoplay muted src="static/videos/bonn_person.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-                  <canvas height=0 class="videoMerge" id="person1Merge"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-        </p>
+<!--        <h3 class="title is-5">person</h3>-->
+<!--        <p style="margin-top: -60px">-->
+<!--          <div class="container is-max-desktop">-->
+<!--            <div class="hero-body">-->
+<!--              <div class="columns is-centered has-text-centered">-->
+<!--                <div class="column is-full-width">-->
+<!--                  <video class="video" width="50%" id="person1" loop playsinline autoplay muted src="static/videos/bonn_person.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>-->
+<!--                  <canvas height=0 class="videoMerge" id="person1Merge"></canvas>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </p>-->
 
         <p style="margin-top: -60px">
           <div style="height: 50px;"></div> 
@@ -475,20 +508,6 @@
               </div> 
             </div> 
           </div> 
-        </p>
-
-        <h3 class="title is-5">rgbd_dataset_freiburg1_desk</h3>
-        <p style="margin-top: -60px">
-          <div class="container is-max-desktop">
-            <div class="hero-body">
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-full-width">
-                  <video class="video" width="50%" id="xyalias8" loop playsinline autoplay muted src="static/videos/TUM_desk.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-                  <canvas height=0 class="videoMerge" id="xyalias8Merge"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
         </p>
 
       </div>
