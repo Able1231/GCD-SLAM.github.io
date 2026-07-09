@@ -506,7 +506,83 @@ Dynamic Visual SLAM with 3D Foundation Model">
           <div class="columns is-centered">
             <div class="column is-full-width">
 
-              <div id="example1" class="bal-container-small">
+
+              <div id="example1" class="bal-container-small" style="margin-top: 20px;">
+
+                  <div class="bal-after">
+                    <img src="static/videos/nvs_0002.png">
+                    <div class="bal-afterPosition afterLabel">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="static/videos/nvs_0002_wild.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        WildGS-SLAM
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+                <div id="example2" class="bal-container-small" style="margin-top: 20px;">
+
+                  <div class="bal-after">
+                    <img src="static/videos/nvs_0006_wild.png">
+                    <div class="bal-afterPosition afterLabel">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="static/videos/nvs_0006_wild_render.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        WildGS-SLAM
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+                <div id="example3" class="bal-container-small" style="margin-top: 20px;">
+
+                  <div class="bal-after">
+                    <img src="static/videos/render_198.0.png">
+                    <div class="bal-afterPosition afterLabel">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="static/videos/video_idx_16_kf_idx_198_render.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        WildGS-SLAM
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+              <div id="example4" class="bal-container-small">
 
                 <div class="bal-after">
                   <img src="static/videos/any1our.png">
@@ -530,6 +606,7 @@ Dynamic Visual SLAM with 3D Foundation Model">
                 </div>
 
               </div>
+
 
             </div>
           </div>
@@ -642,6 +719,15 @@ Dynamic Visual SLAM with 3D Foundation Model">
 <script>
     new BeforeAfter({
         id: '#example1'
+    });
+    new BeforeAfter({
+          id: '#example2'
+    });
+    new BeforeAfter({
+          id: '#example3'
+    });
+    new BeforeAfter({
+          id: '#example4'
     });
 
 </script>
