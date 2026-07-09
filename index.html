@@ -349,7 +349,7 @@ Dynamic Visual SLAM with 3D Foundation Model">
     <!-- Results. -->
     <div class="columns is-centered ">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Offline Render Result</h2>
 
         <h3 class="title is-4">Nerf On-the-go Dataset</h3>
 
@@ -416,7 +416,7 @@ Dynamic Visual SLAM with 3D Foundation Model">
             <div class="tab-pane active" id="Ball">
               <div class="columns is-centered has-text-centered">
                 <div class="column is-full-width">
-                  <video class="video" width="50%" id="BallVideo" loop playsinline autoplay muted src="static/videos/ball.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+                  <video class="video" width="50%" id="BallVideo" loop playsinline autoplay muted src="static/videos/ball1.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
                   <canvas height=0 class="videoMerge" id="BallVideoMerge"></canvas>
                 </div>
               </div>
@@ -509,6 +509,46 @@ Dynamic Visual SLAM with 3D Foundation Model">
             </div> 
           </div> 
         </p>
+
+        <p style="margin-top: -60px">
+          <div style="height: 50px;"></div>
+          <h3 class="title is-4">Compared with WildGS-SLAM</h3>
+        </p>
+
+        <h3 class="title is-5"></h3>
+        <p style="margin-top: -60px">
+          <div class="container is-max-desktop">
+            <div class="hero-body">
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-full-width">
+                  <video class="video" width="50%" id="anywild" loop playsinline autoplay muted src="static/videos/any_wild.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+                  <canvas height=0 class="videoMerge" id="wildMerge"></canvas>
+                  <p class="has-text-centered" style="margin-top: 15px;">
+                      <b>WildGS-SLAM</b>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p>
+
+        <h3 class="title is-5"></h3>
+        <p style="margin-top: -60px">
+          <div class="container is-max-desktop">
+            <div class="hero-body">
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-full-width">
+                  <video class="video" width="50%" id="anyour" loop playsinline autoplay muted src="static/videos/any_our.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+                  <canvas height=0 class="videoMerge" id="ourMerge"></canvas>
+                  <p class="has-text-centered" style="margin-top: 15px;">
+                      <b>Ours</b>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p>
+
 
       </div>
     </div>
