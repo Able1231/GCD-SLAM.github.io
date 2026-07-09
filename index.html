@@ -9,7 +9,7 @@ Dynamic Visual SLAM with 3D Foundation Model">
   <meta name="keywords" content="GCD-SLAM: Globally Consistent Calibration-Free
 Dynamic Visual SLAM with 3D Foundation Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DyEG-SLAM</title>
+  <title>GCD-SLAM</title>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="./static/css/bootstrap-4.4.1.css">
@@ -222,7 +222,7 @@ Dynamic Visual SLAM with 3D Foundation Model">
         <h2 class="title is-3" style="margin-top: -60px">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Feed-forward 3D reconstruction models have recently shown strong potential for end-to-end SLAM by enabling efficient inference without iterative optimization. In this paper, we propose an end-to-end dynamic Gaussian SLAM framework. To handle scene dynamics in a feed-forward manner, we first extend the Depth Anything V3 pipeline with motion cues via an auxiliary feed-forward motion head that operates in conjunction with the camera and depth heads, enabling dynamic segmentation without manual priors. To achieve scalable feed-forward tracking in dynamic environments, we decompose the scene into multiple submaps and introduce an overlap-based submap alignment strategy to achieve stable alignment of submaps in dynamic environments. Moreover, motion cues are leveraged to enable loop closure in dynamic scenes, enhancing global consistency under dynamic conditions. Finally, the predicted motion cues are integrated into a dynamic-aware GS-DPT module, which explicitly disentangles static and dynamic Gaussian primitives for robust scene representation. Extensive experiments demonstrate that our method achieves strong performance in both dynamic and static scenes, even without camera intrinsic calibration.  </p>
+            Monocular dynamic Simultaneous Localization and Mapping (SLAM) remains challenging when operating without precise camera calibration or metric depth priors. Existing methods heavily rely on pre-calibrated intrinsics or predefined semantic categories, limiting their generalization in uncalibrated or open-vocabulary dynamic environments. To resolve these limitations, we propose GCD-SLAM, an uncalibrated dynamic visual SLAM framework driven by 3D foundation model. We leverage an end-to-end feed-forward reconstruction model to eliminate the stringent dependency on camera calibration and absolute depth. To suppress dynamic distractors without prior category knowledge, we introduce a semantic-geometric motion evaluation scheme that characterises the structural ambiguity between feed-forward trajectories and optical flow, aggregating motion cues within open-vocabulary semantic subspaces. Furthermore, an efficient backend loop closure strategy is developed to register submaps via synthesized static structures, effectively mitigating long-term drift. Finally, we establish a hybrid mapping architecture that anchors 3D Gaussian primitives onto surface-consistent SDF priors, accelerating convergence for distractor-free, photorealistic novel view synthesis. Extensive experiments demonstrate that GCD-SLAM significantly outperforms state-of-the-art methods in both uncalibrated tracking accuracy and high-fidelity reconstruction quality.  </p>
         </div>
       </div>
     </div>
@@ -271,12 +271,7 @@ Dynamic Visual SLAM with 3D Foundation Model">
         <img src="static/videos/pipeline.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-             Framework of GCD-SLAM. GCD-SLAM extends Depth Anything V3 with motion cues to jointly infer camera
-poses, scene depth, and motion masks from a sequence of RGB images. Incoming frames are incrementally grouped into local
-submaps for independent inference and maintained in a submap buffer, where overlap-based transformation estimation and
-loop closure are performed to enforce global consistency. Finally, an efficient Gaussian mapping module takes RGB images
-and motion masks to generate Gaussian primitives with dynamic regions suppressed, which are then rendered via Gaussian
-rasterization.
+             Framework of GCD-SLAM. GCD-SLAM extends Depth Anything V3 with motion cues to jointly infer camera poses, scene depth, and motion masks from a sequence of RGB images. Incoming frames are incrementally grouped into local submaps for independent inference and maintained in a submap buffer, where overlap-based transformation estimation and loop closure are performed to enforce global consistency. Finally, an efficient Gaussian mapping module takes RGB images and motion masks to generate Gaussian primitives with dynamic regions suppressed, which are then rendered via Gaussian rasterization.
           </p>
         </div>
 
